@@ -26,12 +26,14 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 <script type="text/javascript">
-  (function(){
-      emailjs.init("DcgXv6fIRLlJP1h9x");
-  })();
+   (function(){
+      emailjs.init({
+        publicKey: "Ye_YCveVxsQZ_ONX3",
+      });
+   })();
 </script>
 </head>
 
@@ -684,7 +686,7 @@ function sendMail() {
   emailjs.send(serviceID, templateID, params)
     .then(
       res => {
-        document.getElementById('message').value = ""; // Corrected this line to set the value to an empty string
+        document.getElementById('message').value = ""; 
         console.log(res);
         alert("Your message was sent successfully");
       })
